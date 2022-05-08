@@ -19,6 +19,7 @@
         android:text="Créditos"
         android:textSize="10sp"
         app:cornerRadius="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/rvPersonajes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
