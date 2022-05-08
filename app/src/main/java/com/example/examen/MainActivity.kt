@@ -1,8 +1,10 @@
 package com.example.examen
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -15,11 +17,18 @@ class MainActivity : AppCompatActivity() {
     lateinit var myRecycler: RecyclerView
     lateinit var listaPersonajes:ArrayList<Personaje>
     lateinit var adaptador: PersonajeAdapter
+    lateinit var btnCreditos:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        btnCreditos = findViewById(R.id.btnCreditos)
+
+        btnCreditos.setOnClickListener {
+            val intentCreditos= Intent(this,CreditosActivity::class.java)
+            startActivity(intentCreditos)
+        }
 
         listaPersonajes = ArrayList<Personaje>()
         adaptador = PersonajeAdapter(listaPersonajes)

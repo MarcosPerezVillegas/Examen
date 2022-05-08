@@ -8,16 +8,16 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnRegresar2"
-        android:layout_width="97dp"
-        android:layout_height="35dp"
+        android:id="@+id/btnCreditos"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
         android:backgroundTint="#2C3777"
         android:shadowColor="#000000"
         android:shadowDx="10"
         android:shadowDy="50"
         android:shadowRadius="200"
         android:text="Créditos"
-        android:textSize="10sp"
+        android:textSize="11sp"
         app:cornerRadius="100dp"
         app:layout_constraintBottom_toTopOf="@+id/rvPersonajes"
         app:layout_constraintEnd_toEndOf="parent"
