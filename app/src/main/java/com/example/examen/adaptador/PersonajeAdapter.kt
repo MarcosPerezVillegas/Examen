@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.examen.modelo.Personaje
 import com.example.examen.R
 import com.squareup.picasso.Picasso
+import org.w3c.dom.Text
 
 class PersonajeAdapter(val listaPersonajes: ArrayList<Personaje>):RecyclerView.Adapter<PersonajeAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -20,6 +21,8 @@ class PersonajeAdapter(val listaPersonajes: ArrayList<Personaje>):RecyclerView.A
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.tvNombre.text = listaPersonajes[position].nombre
         Picasso.get().load(listaPersonajes[position].imagen).into(holder.ivPersonaje)
+        holder.tvNombreKanji.text = listaPersonajes[position].nombreKanji
+        holder.tvLikes.text = listaPersonajes[position].likes
     }
 
     override fun getItemCount(): Int {
@@ -29,10 +32,14 @@ class PersonajeAdapter(val listaPersonajes: ArrayList<Personaje>):RecyclerView.A
     class ViewHolder(vista:View):RecyclerView.ViewHolder(vista){
         val tvNombre:TextView
         val ivPersonaje:ImageView
+        val tvNombreKanji:TextView
+        val tvLikes:TextView
 
         init {
             tvNombre = vista.findViewById(R.id.tvNombre)
             ivPersonaje= vista.findViewById(R.id.ivPersonaje)
+            tvNombreKanji= vista.findViewById(R.id.tvNombreKanji)
+            tvLikes= vista.findViewById(R.id.tvLikes)
         }
     }
 
