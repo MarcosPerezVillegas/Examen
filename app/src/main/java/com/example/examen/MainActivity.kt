@@ -43,7 +43,8 @@ class MainActivity : AppCompatActivity() {
                     val personajeIndJson = personajesJson.getJSONObject(indice)
                     val imgJson = personajeIndJson.getJSONObject("images")
                     val urlJson = imgJson.getJSONObject("jpg")
-                    val personaje = Personaje(personajeIndJson.getString("name"),urlJson.getString("image_url"),personajeIndJson.getString("name_kanji"),personajeIndJson.getString("favorites"))
+                    val personaje = Personaje(personajeIndJson.getString("name"),urlJson.getString("image_url"),
+                        personajeIndJson.getString("name_kanji"),personajeIndJson.getString("favorites"))
                     listaPersonajes.add(personaje)
                 }
                 adaptador.notifyDataSetChanged()
