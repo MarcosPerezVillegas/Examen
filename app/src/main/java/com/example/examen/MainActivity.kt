@@ -6,7 +6,6 @@ import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
-import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.examen.adaptador.PersonajeAdapter
@@ -37,20 +36,19 @@ class MainActivity : AppCompatActivity() {
 
         val objectRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
-            Response.Listener{ respuesta ->
+            /*Response.Listener*/{ respuesta ->
 
                 val personajesJson = respuesta.getJSONArray("data")
                 for(indice in 0..personajesJson.length()-1){
                     val personajeIndJson = personajesJson.getJSONObject(indice)
                     val imgJson = personajeIndJson.getJSONObject("images")
                     val urlJson = imgJson.getJSONObject("jpg")
-                    val personaje = Personaje(personajeIndJson.getString("name"),urlJson.getString("image_url"),
-                        personajeIndJson.getString("name_kanji"),personajeIndJson.getString("favorites"))
+                    val personaje = Personaje(personajeIndJson.getString("name"),urlJson.getString("image_url"),personajeIndJson.getString("name_kanji"),personajeIndJson.getString("favorites"))
                     listaPersonajes.add(personaje)
                 }
                 adaptador.notifyDataSetChanged()
             },
-            Response.ErrorListener{
+            /*Response.ErrorListener*/{
                 Log.e("PersonajesAPI","Error")
             }
         )
