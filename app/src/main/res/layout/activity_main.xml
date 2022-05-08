@@ -7,12 +7,29 @@
     android:background="#673AB7"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/btnRegresar2"
+        android:layout_width="97dp"
+        android:layout_height="35dp"
+        android:backgroundTint="#2C3777"
+        android:shadowColor="#000000"
+        android:shadowDx="10"
+        android:shadowDy="50"
+        android:shadowRadius="200"
+        android:text="Créditos"
+        android:textSize="10sp"
+        app:cornerRadius="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/rvPersonajes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPersonajes"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
