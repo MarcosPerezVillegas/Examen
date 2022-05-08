@@ -5,7 +5,7 @@
     android:id="@+id/CardView"
     android:layout_width="match_parent"
     android:layout_height="500dp"
-    android:backgroundTint="#673AB7">
+    android:backgroundTint="#787272">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
