@@ -8,6 +8,7 @@ import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
+import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.examen.adaptador.PersonajeAdapter
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         btnCreditos = findViewById(R.id.btnCreditos)
 
         btnCreditos.setOnClickListener {
-            val intentCreditos= Intent(this,CreditosActivity::class.java)
+            val intentCreditos=Intent(this,CreditosActivity::class.java)
             startActivity(intentCreditos)
         }
 
@@ -45,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         val objectRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
-            /*Response.Listener*/{ respuesta ->
+            { respuesta ->
 
                 val personajesJson = respuesta.getJSONArray("data")
                 for(indice in 0..personajesJson.length()-1){
@@ -57,7 +58,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 adaptador.notifyDataSetChanged()
             },
-            /*Response.ErrorListener*/{
+            {
                 Log.e("PersonajesAPI","Error")
             }
         )
